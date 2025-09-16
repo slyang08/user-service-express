@@ -8,8 +8,9 @@
     "strict": true, // Enable strict type checking
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true, // Skip type checking for library files
-    "outDir": "./dist" // Output directory
+    "outDir": "./dist", // Output directory
+    "rootDir": "./src"
   },
-  "include": ["src/**/*.ts"], // Files to compile
-  "exclude": ["node_modules"] // Exclude directories
+  "include": ["src/**/*", "src/types/**/*"], // Files to compile
+  "exclude": ["node_modules", "dist"] // Exclude directories
 }
