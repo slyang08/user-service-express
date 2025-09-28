@@ -39,7 +39,7 @@ export const register = async (req: Request, res: Response) => {
     }
 
     // Send verification email
-    const verifyUrl = `${process.env.FRONTEND_URL}/verify-email?token=${token}&id=${user._id}`;
+    const verifyUrl = `${process.env.VERIFY_URL}/verify-email?token=${token}&id=${user._id}`;
     await sendEmail(email, "Verify your email", verificationContent(verifyUrl));
 
     res.status(201).json({ message: "Verification email sent", userId: user._id });
@@ -55,6 +55,10 @@ export const register = async (req: Request, res: Response) => {
  */
 export const verifyEmail = async (req: Request, res: Response) => {
   const { token, id } = req.query;
+
+  if (!token || !id) {
+    return res.status(400).json({ message: "Missing token or id" });
+  }
 
   try {
     // Find the user

@@ -16,8 +16,8 @@ import { updateProfileSchema } from "../validations/userValidation.js";
 const router = express.Router();
 
 router.get("/", getAllUsers);
-router.post("register", register);
-router.get("verify-email", verifyEmail);
+router.post("/register", register);
+router.get("/verify-email", verifyEmail);
 router.get("/:id", getUserById);
 router.get("/email/:email", getUserByEmail);
 router.patch("/:id", validateBody(updateProfileSchema), updateProfile);

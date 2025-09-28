@@ -6,10 +6,10 @@
   "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
+    "start": "node src/server.ts",
+    "dev": "nodemon --exec tsx src/server.ts",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix",
+    "lint:fix": "eslint . --fix",
     "prepare": "husky",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write ."
@@ -24,15 +24,18 @@
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "express-rate-limit": "^8.1.0",
+    "google-auth-library": "^10.3.0",
     "helmet": "^8.1.0",
     "mongoose": "^8.18.1",
     "morgan": "^1.10.1",
+    "nodemailer": "^7.0.6",
     "swagger-ui-express": "^5.0.1",
     "zod": "^4.1.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
     "@types/express": "^5.0.3",
+    "@types/nodemailer": "^7.0.1",
     "@typescript-eslint/eslint-plugin": "^8.43.0",
     "@typescript-eslint/parser": "^8.43.0",
     "eslint": "^9.35.0",
@@ -41,6 +44,8 @@
     "eslint-plugin-prettier": "^5.5.4",
     "husky": "^9.1.7",
     "nodemon": "^3.1.10",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2"
   }
 }
