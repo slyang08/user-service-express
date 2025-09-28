@@ -1,7 +1,7 @@
 // src/utils/sendEmail.js
 import { OAuth2Client } from "google-auth-library";
-import SMTPTransport from "nodemailer/lib/smtp-transport";
 import nodemailer from "nodemailer";
+import SMTPTransport from "nodemailer/lib/smtp-transport";
 
 const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN, GOOGLE_USER } = process.env;
 
